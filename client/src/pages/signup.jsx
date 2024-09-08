@@ -12,7 +12,7 @@ const Signup = () => {
     const response = await axios.post('http://localhost:8000/api/signup', values);
 
       if(response.data.success){
-            message.success("Registration Successfylly");
+            message.success("Registration Successfully");
             navigate("/login");
       }else{
         message.error(response.data.message)
