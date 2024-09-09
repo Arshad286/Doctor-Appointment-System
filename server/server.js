@@ -4,6 +4,7 @@ import cors from 'cors';
 import Connect from './config/db.js';
 import morgan from 'morgan';
 import userRouter from './routes/user-routes.js'
+import authRouter from './routes/auth-token-router.js'
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(cors({
 
 
 app.use('/api', userRouter);
+app.use('/api', authRouter);
 
 const PORT = process.env.PORT;
 
