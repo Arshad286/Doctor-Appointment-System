@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 export const accessToken = async (req, res, next) => {
   try{
   const authHeader = req.headers["authorization"];
+  
   if (!authHeader.startsWith("Bearer ")) {
     return res.status(401).send({
       message: "Authorization header missing or malformed",

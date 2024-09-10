@@ -2,7 +2,7 @@ import userModel from "../models/user-model.js";
 
 export const authController = async (req, res) => {
   try {
-    const user = await userModel.findOne({
+    const user = await userModel.findById({
       _id: req.body.userId,
     });
 
@@ -22,7 +22,7 @@ export const authController = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    res.status(501).send({
+    res.status(500).send({
       message: "Authorization Error",
       success: false,
     });
